@@ -1,0 +1,39 @@
+/* Scanline effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.1));
+    background-size: 100% 4px;
+    z-index: 5;
+    pointer-events: none;
+    animation: scrollLines 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes scrollLines {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(4px);
+    }
+
+    /* seamless loop */
+}
+
+/* Enhancing the bottom animation */
+.bottom-hint {
+    /* Existing style */
+    position: absolute;
+    bottom: 80px;
+    /* Moved up slightly */
+    /* ... rest remains in previous definition, overriding just for position tweak */
+}
