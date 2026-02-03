@@ -1,6 +1,7 @@
 {
   "name": "Today's Manna",
   "short_name": "DailyManna",
+  "id": "daily-manna-cyber",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
