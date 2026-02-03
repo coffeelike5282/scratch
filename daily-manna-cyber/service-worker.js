@@ -9,7 +9,7 @@ const ASSETS_TO_CACHE = [
     './Music_fx_atmospheric_calming_and_churchapp.wav',
     './manifest.json',
     './icon-192.png',
-    './icon-512.jpg'
+    './icon-512.png'
 ];
 
 // Install Event: Cache assets
