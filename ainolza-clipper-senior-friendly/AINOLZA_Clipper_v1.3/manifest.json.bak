@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "NotebookLM Web Importer (AI Nolza)",
+    "version": "1.3",
+    "description": "웹페이지 본문 및 유튜브 링크를 수집하여 NotebookLM으로 보냅니다.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "alarms"
+    ],
+    "host_permissions": [
+        "*://*.youtube.com/*",
+        "*://*.naver.com/*",
+        "*://*.blog.naver.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "AI Nolza Clipper",
+        "default_icon": {
+            "16": "assets/icon.png",
+            "48": "assets/icon.png",
+            "128": "assets/icon.png"
+        }
+    },
+    "icons": {
+        "16": "assets/icon.png",
+        "48": "assets/icon.png",
+        "128": "assets/icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
