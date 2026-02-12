@@ -1,4 +1,4 @@
 @echo off
-set PAYPAL_ACCESS_TOKEN=A21AAKy5bt7iwDKVBR0whCIC6tpQEledKuOAGa_K9GaToe1AMaRpwpMhX1NYf9cLpUszH9UAq-Mn_-_QYrxquM5Kcp4zIWeZw
+set PAYPAL_ACCESS_TOKEN=A21AAJKdovsk9OdTkHqfO8lt5N7Qm-VIXRfWgUSr0kcgPoj7k97AaQ1gOkN2oa4n9od01zrLrAy7CBof_VYyH3CE33aqEhPAQ
 set PAYPAL_ENVIRONMENT=SANDBOX
 node node_modules\@paypal\mcp\dist\index.js --tools=all

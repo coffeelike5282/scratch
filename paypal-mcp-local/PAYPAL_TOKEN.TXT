@@ -1,6 +1,6 @@
 SANDBOX
-"access_token":"A21AAKy5bt7iwDKVBR0whCIC6tpQEledKuOAGa_K9GaToe1AMaRpwpMhX1NYf9cLpUszH9UAq-Mn_-_QYrxquM5Kcp4zIWeZw"
+"access_token":"A21AAJKdovsk9OdTkHqfO8lt5N7Qm-VIXRfWgUSr0kcgPoj7k97AaQ1gOkN2oa4n9od01zrLrAy7CBof_VYyH3CE33aqEhPAQ"
 "token_type":"Bearer","app_id":"APP-3HP14405FB8317037","expires_in":32400,
-"nonce":"2026-02-11T13:20:19.810690Z"
+"nonce":"2026-02-13T02:40:33.999845Z"
 
 LIVE
