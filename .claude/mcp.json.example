@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "paypal": {
+      "command": "node",
+      "args": [
+        "D:\\AI\\Antigravity\\paypal-mcp-local\\node_modules\\@paypal\\mcp\\dist\\index.js",
+        "--tools=all"
+      ],
+      "env": {
+        "PAYPAL_ACCESS_TOKEN": "YOUR_PAYPAL_ACCESS_TOKEN_HERE",
+        "PAYPAL_ENVIRONMENT": "SANDBOX"
+      }
+    }
+  }
+}

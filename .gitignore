@@ -1,0 +1,8 @@
+# Claude MCP Configuration (contains tokens)
+.claude/mcp.json
+
+# PayPal Tokens
+paypal-mcp-local/PAYPAL_TOKEN.TXT
+
+# Node modules
+node_modules/
