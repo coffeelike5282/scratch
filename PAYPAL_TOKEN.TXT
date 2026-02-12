@@ -1,6 +1,0 @@
-SANDBOX
-"access_token":"A21AAKy5bt7iwDKVBR0whCIC6tpQEledKuOAGa_K9GaToe1AMaRpwpMhX1NYf9cLpUszH9UAq-Mn_-_QYrxquM5Kcp4zIWeZw"
-"token_type":"Bearer","app_id":"APP-3HP14405FB8317037","expires_in":32400,
-"nonce":"2026-02-11T13:20:19.810690Z"
-
-LIVE
