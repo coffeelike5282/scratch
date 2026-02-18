@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(emulator:*)",
+      "Bash(adb devices:*)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/emulator/emulator.exe\" -list-avds)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe\" devices)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe\" wait-for-device)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe\" shell getprop sys.boot_completed)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe\" reverse tcp:8081 tcp:8081)",
+      "Bash(npx expo start:*)",
+      "Bash(\"$LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe\" shell pm list packages)",
+      "Bash(\"/c/Users/coffeelike/AppData/Local/Android/Sdk/platform-tools/adb.exe\" shell pm list packages)",
+      "Bash(\"/c/Users/coffeelike/AppData/Local/Android/Sdk/platform-tools/adb.exe\" shell monkey -p com.coffeelike.todaysmanna -c android.intent.category.LAUNCHER 1)",
+      "Bash(\"/c/Users/coffeelike/AppData/Local/Android/Sdk/platform-tools/adb.exe\" logcat -d -s ReactNativeJS:* AudioService:* ExpoAudio:*)",
+      "Bash(\"/c/Users/coffeelike/AppData/Local/Android/Sdk/platform-tools/adb.exe\" logcat -d -s ReactNativeJS:*)",
+      "WebSearch"
+    ]
+  }
+}
