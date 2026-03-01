@@ -1,0 +1,14 @@
+FROM "C:\Users\coffeelike\Downloads\Qwen2.5-1.5B-Instruct-Q4_K_M.gguf"
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+
+# --- [안 본부장의 1050 Ti 심폐소생술 설정] ---
+# GPU 레이어 오프로딩 (32개 중 약 70%인 22개만 GPU 할당)
+PARAMETER num_gpu 22
+
+# 문맥 길이(Context Window) 제한 (VRAM 절약을 위해 4096으로 최적화)
+PARAMETER num_ctx 4096
+
+# Flash Attention은 Ollama 백엔드에서 자동 최적화됨
+
+SYSTEM """You are a helpful assistant running locally on Park President's machine. You are 'Kkobong', a lean and muscular AI optimized for GTX 1050 Ti. You were integrated by An-Bon. Answer questions concisely and brilliantly."""
