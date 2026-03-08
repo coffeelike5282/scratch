@@ -1,0 +1,207 @@
+{
+  "cookies": [
+    {
+      "name": "nid_slevel",
+      "value": "1",
+      "domain": ".nid.naver.com",
+      "path": "/",
+      "expires": 1804095730,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SRT30",
+      "value": "1772558330",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": 1772561534.793795,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SRT5",
+      "value": "1772558330",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": 1772560034.793844,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "NNB",
+      "value": "XXFZPDH2C6TWS",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": 1807119734.79367,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "NAC",
+      "value": "aRfsC4B5Hr2oB",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": 1807118317.947295,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "NACT",
+      "value": "1",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": 1772644718.828871,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "nid_buk",
+      "value": "XXFZPDH2C6TWS",
+      "domain": ".nid.naver.com",
+      "path": "/",
+      "expires": 1807118523.893034,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "PM_CK_loc",
+      "value": "250f5769810405b29c6467c72b1f7265f582944c72e1c15c0241288fcff80435",
+      "domain": "www.naver.com",
+      "path": "/",
+      "expires": 1772645009.369463,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NM_srt_chzzk",
+      "value": "1",
+      "domain": "www.naver.com",
+      "path": "/",
+      "expires": 1772645010,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NM_srt_lounge",
+      "value": "1",
+      "domain": "www.naver.com",
+      "path": "/",
+      "expires": 1772645279,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "nid_inf",
+      "value": "1275255253",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NID_AUT",
+      "value": "F93/bDx0VhK/2dbTfUfLUUXWq1jCYTlxNpoNLOmPHBBycRoD8LB8jP2GXE62IYR5",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NID_SES",
+      "value": "AAAByFkyPLSv3MZ2ijR3P8gsONpS+94zhPtMGZ5QonFEP0UIGcr8QqFDWe1TfSw4c81BbF9nE2f6/RrP2vc1y/2pbU2lLLl+euDkLprsm+BMbZl4AuQex4JWLV1XkzI7zU5qv/Piye1Y2t2d3PVaFdz1h3hLRZiDj7KPNMYa3erYws1RB6rMAYEEWYnQN54dX73AtwQHUjs0ZxzInVA9Cad0SPWJpa4YZmPdtcUV+9XRPAx57hORrjKwdlNePC/Tdus6Wd/DYvoOTacWW+MG7SpqsInQ6gvhoICmNzNMwvhF3XnLRqA4FUn3ZePWgs0TAiq47Ip3RILXOR1hE71SLhBKYmCAN5KqFpsauKnZkBJ06kMEjn/I4ofW1fqry17R0vjj1w76JYCXRrk3zirr58Sw1ylfkAZH4z8cyvWqz9yKxEQvwZNY9UgDnOautLVu3+vUXkHA6jjQf5aoohdKFHS8ZijLoYzkzVfHQhRNQLFJYoFi7qEANyIHkK7T18gZWZhWp/a0I7MkAs2DfOlP//ykT3jQAR+X9TxAsWHTOHjOj13gOV2KUNdc8Mjt5rpdcxrQpEvIcUjZoSZomOOfOuHTpeFdRGs0HzAgcMsomvH2iElc",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NID_JST",
+      "value": "adXedgtWW30cmeuVPH6mD+udFoo2TtluAa6ocmdXZvRIpDr+ojrw235exLg7dAgd7N3rWwZPrk6QvEl8GPjxwdPopWF/6gMk1f4eUKQYxQUN5y9x32jk4giqf5PyIvuvpyr9C/nhpjMaFS15ue3DF3dWsGHihy7kJKOFgNoPxzE=",
+      "domain": ".nid.naver.com",
+      "path": "/",
+      "expires": 1789839734.669602,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "BUC",
+      "value": "_O1dfPhI6O0MQ3IjKcc8I_30fuy7Dpot3Ux4CNNeOzc=",
+      "domain": ".naver.com",
+      "path": "/",
+      "expires": 1807119734.79388,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://nid.naver.com",
+      "localStorage": [
+        {
+          "name": "nid_buk",
+          "value": "XXFZPDH2C6TWS"
+        },
+        {
+          "name": "glad_loader_policy_info",
+          "value": "{\"regDate\":\"2026-03-03T17:18:37.733Z\",\"data\":{\"versionInfo\":{\"policyVersion\":\"260127.01\",\"loaderVersion\":\"1.6.0\",\"sdkVersion\":\"3.7.1\"},\"sdkInfo\":{\"latestRatio\":1,\"config\":{}},\"sentryInfo\":{\"enableSentry\":false,\"config\":{\"sampleRate\":0.001}}}}"
+        },
+        {
+          "name": "3fbddd8d15feb0d3",
+          "value": "025a50c3cb0da25843c8de0037002e3bf217c505eec440881c8011faa067c066"
+        },
+        {
+          "name": "d6277b37e628876c",
+          "value": "5e7b58ee8d369a0507c37241a704bc42c30660120816a0b102ef915e4a5b1765"
+        },
+        {
+          "name": "gfp_uuid_iv",
+          "value": "ba27b650-0921-4873-96f5-b34f35af330a"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.naver.com",
+      "localStorage": [
+        {
+          "name": "glad_loader_policy_info",
+          "value": "{\"regDate\":\"2026-03-03T17:23:29.407Z\",\"data\":{\"versionInfo\":{\"policyVersion\":\"260127.01\",\"loaderVersion\":\"1.6.0\",\"sdkVersion\":\"3.7.1\"},\"sdkInfo\":{},\"sentryInfo\":{\"enableSentry\":true,\"config\":{\"sampleRate\":0.001}}}}"
+        },
+        {
+          "name": "gfp_uuid_iv",
+          "value": "5e03b2b4-03e4-457d-adf2-9352c1891e47"
+        }
+      ]
+    },
+    {
+      "origin": "https://search.naver.com",
+      "localStorage": [
+        {
+          "name": "sb-kh-ai-suggest",
+          "value": ""
+        },
+        {
+          "name": "sb-kh-recomm-use",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}
