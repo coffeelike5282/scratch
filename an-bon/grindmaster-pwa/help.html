@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+            color: #e4e2e1;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A2A;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#303030",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed": "#2d1604",
+                    "surface-dim": "#131313",
+                    "on-background": "#e4e2e1",
+                    "surface-variant": "#353535",
+                    "tertiary-fixed-dim": "#eabda0",
+                    "background": "#131313",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-primary-container": "#7e7d7d",
+                    "surface-container-low": "#1b1c1c",
+                    "surface": "#131313",
+                    "primary": "#c8c6c5",
+                    "on-tertiary": "#452a16",
+                    "surface-container": "#1f2020",
+                    "secondary": "#c6c6c7",
+                    "on-secondary-fixed-variant": "#454747",
+                    "inverse-primary": "#5f5e5e",
+                    "outline": "#8e9192",
+                    "on-surface": "#e4e2e1",
+                    "inverse-surface": "#e4e2e1",
+                    "tertiary": "#eabda0",
+                    "secondary-container": "#454747",
+                    "tertiary-fixed": "#ffdcc6",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-secondary-container": "#b4b5b5",
+                    "outline-variant": "#444748",
+                    "on-tertiary-container": "#9b755c",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "tertiary-container": "#220c00",
+                    "on-secondary": "#2f3131",
+                    "surface-bright": "#393939",
+                    "surface-container-highest": "#353535",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-fixed-variant": "#5f402a",
+                    "primary-container": "#121212",
+                    "surface-tint": "#c8c6c5",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-primary": "#313030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "section-gap": "40px",
+                    "touch-target-min": "48px",
+                    "gutter": "16px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "numeric-data": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "numeric-data": ["40px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-touch-target-min bg-background border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-100">
+<span class="material-symbols-outlined text-on-surface">settings</span>
+</button>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile font-bold tracking-tighter text-on-surface">GRINDMASTER</h1>
+<div class="flex items-center gap-4">
+<button class="hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-100">
+<span class="material-symbols-outlined text-on-surface">account_circle</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-4">마스터 카드 사용법</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">마스터 카드 가이드를 통해 연구소 수준의 정밀도로 분쇄도를 보정하세요.</p>
+</section>
+<!-- Main Instruction Card -->
+<div class="bg-surface-container-low border border-outline-variant p-6 mb-section-gap">
+<div class="aspect-video w-full mb-8 overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img alt="Master Card Calibration Guide" class="w-full h-full object-cover" data-alt="A professional top-down studio shot of a sleek black and white calibration card for coffee grinding, featuring a geometric grid and reference circles. The lighting is high-contrast and clinical, emphasizing texture and precision. The background is a matte dark charcoal surface, maintaining a minimalist and laboratory-like aesthetic with subtle white accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl5RenV6z2xgg-RPMSlnIfVo9hqTjamUJPpr0RztTz064eN3z8vMEox9X__4ynl7wrBcpS2OVgM_pLw4_8iVyB7Zorz_IaC9IpwaQX131j3u98NgP1sRXHkNK8U6-fp23rwegAFtS_-7mwamOhcJ2Hj9CVS5RH9kpe9zmqz39uJP8Ve7KMFcuDOJvDBRYCmoJJCkbIwrczl_3ucN3nkRuIjbq3iFuOjF3G36Da66xg0BWGnehgH2AoBVvPscg49qDKiepY77Zn"/>
+</div>
+<!-- Steps -->
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="flex-none w-8 h-8 flex items-center justify-center bg-primary text-on-primary font-bold rounded-sm">1</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-bold mb-2">위치 선정</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">평평하고 단단한 바닥에 마스터 카드를 놓으세요. 카메라가 가려지지 않도록 주변 공간을 확보합니다.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-none w-8 h-8 flex items-center justify-center bg-primary text-on-primary font-bold rounded-sm">2</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-bold mb-2">원두 배치</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">지정된 흰색 사각형 안에 원두 가루를 얇게 한 겹으로 뿌려주세요. 원두가 겹치지 않게 주의합니다.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-none w-8 h-8 flex items-center justify-center bg-primary text-on-primary font-bold rounded-sm">3</div>
+<div>
+<h3 class="font-headline-md text-body-lg font-bold mb-2">촬영 환경</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">밝고 균일한 조명이 있는 곳에서 촬영하세요. 카드 표면에 강한 빛 반사나 그림자가 생기지 않도록 주의합니다.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Order Physical Card -->
+<section class="bg-surface-container border border-outline-variant p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-body-lg font-bold mb-3">마스터 카드 구매</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">전문적인 일일 보정을 위해 내구성이 강한 폴리머 코팅 카드를 주문하세요.</p>
+</div>
+<button class="w-full bg-on-surface text-background font-bold h-touch-target-min hover:opacity-90 transition-opacity active:scale-95 duration-100">
+                    지금 구매하기
+                </button>
+</section>
+<!-- PDF Download -->
+<section class="bg-surface-container border border-outline-variant p-6 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-body-lg font-bold mb-3">출력용 버전</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">직접 보정 도구를 만들 수 있는 고해상도 PDF를 다운로드하세요.</p>
+</div>
+<button class="w-full border-2 border-on-surface text-on-surface font-bold h-touch-target-min hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+                    다운로드
+                </button>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-background px-container-margin pb-safe border-t border-outline-variant h-16">
+<a class="flex flex-col items-center justify-center text-on-primary-container pt-2 hover:text-on-surface transition-colors active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">홈</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface font-bold border-t-2 border-on-surface pt-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+<span class="font-label-caps text-label-caps">촬영</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary-container pt-2 hover:text-on-surface transition-colors active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-caps text-label-caps">기록</span>
+</a>
+</nav>
+<script>
+        // Simple interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.add('scale-95');
+                setTimeout(() => this.classList.remove('scale-95'), 100);
+            });
+        });
+    </script>
+</body></html>

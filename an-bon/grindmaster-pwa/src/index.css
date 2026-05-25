@@ -1,0 +1,75 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #e4e2e1;
+  background-color: #131313;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #131313;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Custom Scrollbar for precise list views */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #131313;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+}
+
+/* Scanner line dynamic animation */
+.scanner-line {
+  height: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.5);
+  animation: scan 3s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%, 100% { top: 20%; }
+  50% { top: 80%; }
+}
+
+/* Base utility layouts */
+.plate {
+  background: #1f2020;
+  border: 1px solid #444748;
+  border-radius: 0.25rem;
+}
+
+.cutout {
+  background: #0e0e0e;
+  border: 1px solid #444748;
+}
+
+.active-border {
+  border-color: #ffffff !important;
+}
+
+/* Numeric data highlights */
+.font-numeric-data {
+  font-family: 'Inter', monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}

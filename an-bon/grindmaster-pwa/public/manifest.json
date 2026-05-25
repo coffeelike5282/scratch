@@ -1,0 +1,16 @@
+{
+  "short_name": "GrindMaster",
+  "name": "그라인드마스터 원두 분쇄도 보정기",
+  "icons": [
+    {
+      "src": "vite.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#131313",
+  "display": "standalone",
+  "theme_color": "#131313",
+  "orientation": "portrait"
+}
