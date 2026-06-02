@@ -3,9 +3,9 @@
   "name": "그라인드마스터 원두 분쇄도 보정기",
   "icons": [
     {
-      "src": "vite.svg",
-      "type": "image/svg+xml",
-      "sizes": "any"
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",

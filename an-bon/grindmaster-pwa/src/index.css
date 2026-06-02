@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
@@ -15,8 +19,7 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: block; /* Vite React 기본 레이아웃 충돌 방지 */
   min-width: 320px;
   min-height: 100vh;
   background-color: #131313;

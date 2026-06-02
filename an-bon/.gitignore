@@ -6,3 +6,11 @@ paypal-mcp-local/PAYPAL_TOKEN.TXT
 
 # Node modules
 node_modules/
+
+# Scratch & Temporary directories
+scratch/
+screen_*.png
+*.log
+dist/
+.env
+

@@ -2,15 +2,52 @@
 <html lang="ko" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <script>
+      // 핀치 줌 방지 (터치 2개 이상)
+      document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+      
+      document.addEventListener('touchmove', function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+      
+      // iOS Safari 제스처 방지
+      document.addEventListener('gesturestart', function (event) {
+        event.preventDefault();
+      });
+      
+      // 더블 탭 줌 방지
+      let lastTouchEnd = 0;
+      document.addEventListener('touchend', function (event) {
+        const now = new Date().getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+    </script>
     <title>그라인드마스터 (GRINDMASTER) | 원두 분쇄도 비교 보정기</title>
     <meta name="description" content="매일 일정한 원두 굵기를 유지하여 흔들림 없는 훌륭한 커피 맛을 표준화하는 캘리브레이션 웹 서비스" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#131313" />
+    
+    <!-- 구글 웹 폰트 및 아이콘 세팅 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- OpenCV.js -->
+    <script async src="https://docs.opencv.org/4.8.0/opencv.js" type="text/javascript"></script>
   </head>
-  <body class="bg-[#131313] text-[#e4e2e1]">
+  <body class="bg-[#131313] text-[#e4e2e1] antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -1,0 +1,110 @@
+{
+  "schema_name": "ConnectAI_System_State_Schema_v1.0",
+  "description": "A formal JSON schema representing the operational state and capabilities of the Connect AI agent.",
+  "system_metadata": {
+    "agent_name": "Connect AI",
+    "mode": "Agentic Coding Assistant",
+    "connectivity": "100% Offline Local",
+    "core_directive": "Execute user requests using provided action tags.",
+    "knowledge_base_status": "Accessible (via read_brain)",
+    "workspace_context": {
+      "path": "e:\\AI\\Antigravity\\an-bon",
+      "structure_summary": "Contains multiple project folders (ainolza-clipper-senior-friendly, Antigravity-skills, Essence-Coffee-Manual, etc.) and specific file types (JS, PY, SQL, JSON, images)."
+    }
+  },
+  "agent_capabilities": {
+    "actions": [
+      {
+        "name": "CREATE_FILE",
+        "description": "Create a new file.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {"type": "string", "description": "Relative path to the file."},
+            "content": {"type": "string", "description": "The content of the file."}
+          },
+          "required": ["path", "content"]
+        }
+      },
+      {
+        "name": "EDIT_FILE",
+        "description": "Edit an existing file.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {"type": "string", "description": "Relative path to the file."},
+            "find": {"type": "string", "description": "Exact text to find."},
+            "replace": {"type": "string", "description": "Replacement text."}
+          },
+          "required": ["path", "find", "replace"]
+        }
+      },
+      {
+        "name": "DELETE_FILE",
+        "description": "Delete a file.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {"type": "string", "description": "Relative path to the file to delete."}
+          },
+          "required": ["path"]
+        }
+      },
+      {
+        "name": "READ_FILE",
+        "description": "Read the content of a file.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {"type": "string", "description": "Relative path to the file to read."}
+          },
+          "required": ["path"]
+        }
+      },
+      {
+        "name": "LIST_DIRECTORY",
+        "description": "List files in a directory.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {"type": "string", "description": "Path to the directory to list."}
+          },
+          "required": ["path"]
+        }
+      },
+      {
+        "name": "RUN_COMMAND",
+        "description": "Run a terminal command.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "command": {"type": "string", "description": "The command to execute (e.g., 'node server.js')."}
+          },
+          "required": ["command"]
+        }
+      },
+      {
+        "name": "READ_BRAIN",
+        "description": "Read content from the user's knowledge base.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "filename": {"type": "string", "description": "The name of the file in the knowledge base."}
+          },
+          "required": ["filename"]
+        }
+      },
+      {
+        "name": "READ_URL",
+        "description": "Read content from a specified URL.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "url": {"type": "string", "description": "The URL to read."}
+          },
+          "required": ["url"]
+        }
+      }
+    ]
+  }
+}

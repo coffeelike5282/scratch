@@ -1,6 +1,16 @@
 <!DOCTYPE html><html class="dark" lang="ko"><head>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<script>
+  document.addEventListener('touchmove', function (event) {
+    if (event.scale !== undefined && event.scale !== 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+  document.addEventListener('gesturestart', function (event) {
+    event.preventDefault();
+  });
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -227,6 +237,38 @@
 <span class="font-label-caps text-label-caps mt-1">기록</span>
 </a>
 </nav>
+<!-- Edit Preset Modal -->
+<div id="editPresetModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-container-margin">
+    <div class="bg-surface-container w-full max-w-sm p-6 border border-outline-variant shadow-2xl">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-6">프리셋 수정</h2>
+        
+        <div class="space-y-4 mb-8">
+            <div>
+                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">프리셋 이름</label>
+                <input type="text" id="editPresetName" class="w-full bg-surface-container-lowest border border-outline-variant focus:border-on-surface transition-colors py-3 px-4 text-on-surface font-body-md outline-none" value="">
+            </div>
+            <div>
+                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">추출 타입</label>
+                <div class="relative">
+                    <select id="editPresetType" class="w-full bg-surface-container-lowest border border-outline-variant focus:border-on-surface transition-colors py-3 px-4 text-on-surface font-body-md outline-none appearance-none">
+                        <option value="에스프레소">에스프레소</option>
+                        <option value="푸어 오버">푸어 오버</option>
+                        <option value="콜드 침출">콜드 침출</option>
+                        <option value="프렌치 프레스">프렌치 프레스</option>
+                        <option value="모카포트">모카포트</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex justify-end gap-2">
+            <button id="cancelEditBtn" class="px-4 py-2 font-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">취소</button>
+            <button id="saveEditBtn" class="px-4 py-2 bg-primary text-on-primary font-body-md font-bold hover:opacity-90 transition-opacity">저장</button>
+        </div>
+    </div>
+</div>
+
 <script>
         // Micro-interaction for cards
         document.querySelectorAll('.bg-surface-container-low').forEach(card => {
@@ -240,7 +282,69 @@
                 card.style.transform = 'scale(1)';
             });
         });
-    </script>
 
+        // Edit Modal Logic
+        const editModal = document.getElementById('editPresetModal');
+        const cancelEditBtn = document.getElementById('cancelEditBtn');
+        const saveEditBtn = document.getElementById('saveEditBtn');
+        let targetCard = null;
+        
+        // Find all more_vert icons and attach event
+        document.querySelectorAll('.bg-surface-container-low .material-symbols-outlined').forEach(icon => {
+            if (icon.textContent.trim() === 'more_vert') {
+                // Prevent click on the icon from triggering the card click if it exists
+                icon.addEventListener('click', (e) => {
+                    e.stopPropagation(); 
+                    e.preventDefault();
+                    
+                    targetCard = e.target.closest('.bg-surface-container-low');
+                    if(targetCard) {
+                        const typeText = targetCard.querySelector('.font-label-caps').textContent.trim();
+                        const nameText = targetCard.querySelector('h3').textContent.trim();
+                        
+                        document.getElementById('editPresetName').value = nameText;
+                        
+                        const select = document.getElementById('editPresetType');
+                        let optionExists = false;
+                        Array.from(select.options).forEach(opt => {
+                            if (opt.value === typeText) optionExists = true;
+                        });
+                        if(!optionExists) {
+                            const newOpt = new Option(typeText, typeText);
+                            select.add(newOpt);
+                        }
+                        select.value = typeText;
+                        
+                        editModal.classList.remove('hidden');
+                        editModal.classList.add('flex');
+                    }
+                });
+            }
+        });
+
+        const closeModal = () => {
+            editModal.classList.add('hidden');
+            editModal.classList.remove('flex');
+            targetCard = null;
+        };
+
+        cancelEditBtn.addEventListener('click', closeModal);
+        
+        saveEditBtn.addEventListener('click', () => {
+            if(targetCard) {
+                const newName = document.getElementById('editPresetName').value;
+                const newType = document.getElementById('editPresetType').value;
+                
+                targetCard.querySelector('h3').textContent = newName;
+                targetCard.querySelector('.font-label-caps').textContent = newType;
+            }
+            closeModal();
+        });
+        
+        // Close on background click
+        editModal.addEventListener('click', (e) => {
+            if (e.target === editModal) closeModal();
+        });
+    </script>
 
 </body></html>

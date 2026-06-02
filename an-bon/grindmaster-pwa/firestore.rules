@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // grindmaster_presets 컬렉션 규칙
+    match /grindmaster_presets/{document} {
+      allow read, delete: if request.auth != null && resource.data.user_id == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.user_id == request.auth.uid;
+      allow update: if request.auth != null && resource.data.user_id == request.auth.uid && request.resource.data.user_id == request.auth.uid;
+    }
+    
+    // grindmaster_history 컬렉션 규칙
+    match /grindmaster_history/{document} {
+      allow read, delete: if request.auth != null && resource.data.user_id == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.user_id == request.auth.uid;
+      allow update: if request.auth != null && resource.data.user_id == request.auth.uid && request.resource.data.user_id == request.auth.uid;
+    }
+  }
+}
