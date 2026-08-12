@@ -13,4 +13,5 @@ screen_*.png
 *.log
 dist/
 .env
+serviceAccountKey.json
 
