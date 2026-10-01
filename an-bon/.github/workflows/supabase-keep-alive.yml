@@ -21,33 +21,33 @@ jobs:
           echo "============================================================"
           
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
-            echo "::error::[CoffeeLike Tarot] Supabase URL 또는 ANON_KEY 시크릿이 설정되지 않았습니다. (COFFEELIKE_SUPABASE_URL 또는 SUPABASE_URL)"
+            echo "::error::[CoffeeLike Tarot] Supabase URL 또는 ANON_KEY 시크릿이 설정되지 않았습니다."
             exit 1
           fi
 
-          # URL 끝의 슬래시(/) 제거 후 /rest/v1/ 엔드포인트 구성
           CLEAN_URL="${SUPABASE_URL%/}"
-          TARGET_URL="${CLEAN_URL}/rest/v1/"
-          echo "Target Endpoint: ${TARGET_URL}"
 
-          # curl 요청 실행 및 HTTP 상태 코드 수집
-          HTTP_STATUS=$(curl -s -S -o /tmp/coffeelike_res.txt -w "%{http_code}" -X GET "${TARGET_URL}" \
+          # 1. Auth 헬스체크 엔드포인트
+          AUTH_STATUS=$(curl -s -S -o /tmp/coffeelike_auth.txt -w "%{http_code}" -X GET "${CLEAN_URL}/auth/v1/health" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" || echo "CURL_FAILED")
+          echo "Auth Status: ${AUTH_STATUS}"
 
-          echo "HTTP Status Code: ${HTTP_STATUS}"
+          # 2. Database REST API
+          DB_STATUS=$(curl -s -S -o /tmp/coffeelike_db.txt -w "%{http_code}" -X GET "${CLEAN_URL}/rest/v1/tb_customer?select=cust_id&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" || echo "CURL_FAILED")
+          echo "Database Status: ${DB_STATUS}"
 
-          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 400 ]; then
+          if ([ "$AUTH_STATUS" -ge 200 ] && [ "$AUTH_STATUS" -lt 400 ]) || ([ "$DB_STATUS" -ge 200 ] && [ "$DB_STATUS" -lt 400 ]); then
             echo "✅ [CoffeeLike Tarot] Supabase 활성 상태 유지 성공!"
           else
-            echo "::error::[CoffeeLike Tarot] Supabase 요청 실패 (상태 코드: ${HTTP_STATUS})"
-            echo "응답 본문:"
-            cat /tmp/coffeelike_res.txt 2>/dev/null || echo "(응답 없음)"
+            echo "::error::[CoffeeLike Tarot] Supabase 요청 실패 (Auth: ${AUTH_STATUS}, DB: ${DB_STATUS})"
             exit 1
           fi
 
       - name: Ping Today's Manna (Todas) Supabase
-        if: always() # 이전 스텝의 성공/실패 여부와 관계없이 항상 실행
+        if: always()
         env:
           SUPABASE_URL: ${{ secrets.TODAS_SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.TODAS_SUPABASE_ANON_KEY }}
@@ -57,27 +57,27 @@ jobs:
           echo "============================================================"
           
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
-            echo "::error::[Today's Manna (Todas)] Supabase URL 또는 ANON_KEY 시크릿이 설정되지 않았습니다. (TODAS_SUPABASE_URL, TODAS_SUPABASE_ANON_KEY)"
+            echo "::error::[Today's Manna (Todas)] Supabase URL 또는 ANON_KEY 시크릿이 설정되지 않았습니다."
             exit 1
           fi
 
-          # URL 끝의 슬래시(/) 제거 후 /rest/v1/ 엔드포인트 구성
           CLEAN_URL="${SUPABASE_URL%/}"
-          TARGET_URL="${CLEAN_URL}/rest/v1/"
-          echo "Target Endpoint: ${TARGET_URL}"
 
-          # curl 요청 실행 및 HTTP 상태 코드 수집
-          HTTP_STATUS=$(curl -s -S -o /tmp/todas_res.txt -w "%{http_code}" -X GET "${TARGET_URL}" \
+          # 1. Auth 헬스체크 엔드포인트
+          AUTH_STATUS=$(curl -s -S -o /tmp/todas_auth.txt -w "%{http_code}" -X GET "${CLEAN_URL}/auth/v1/health" \
             -H "apikey: ${SUPABASE_ANON_KEY}" \
             -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" || echo "CURL_FAILED")
+          echo "Auth Status: ${AUTH_STATUS}"
 
-          echo "HTTP Status Code: ${HTTP_STATUS}"
+          # 2. Database REST API
+          DB_STATUS=$(curl -s -S -o /tmp/todas_db.txt -w "%{http_code}" -X GET "${CLEAN_URL}/rest/v1/manna_verses?select=id&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" || echo "CURL_FAILED")
+          echo "Database Status: ${DB_STATUS}"
 
-          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 400 ]; then
+          if ([ "$AUTH_STATUS" -ge 200 ] && [ "$AUTH_STATUS" -lt 400 ]) || ([ "$DB_STATUS" -ge 200 ] && [ "$DB_STATUS" -lt 400 ]); then
             echo "✅ [Today's Manna (Todas)] Supabase 활성 상태 유지 성공!"
           else
-            echo "::error::[Today's Manna (Todas)] Supabase 요청 실패 (상태 코드: ${HTTP_STATUS})"
-            echo "응답 본문:"
-            cat /tmp/todas_res.txt 2>/dev/null || echo "(응답 없음)"
+            echo "::error::[Today's Manna (Todas)] Supabase 요청 실패 (Auth: ${AUTH_STATUS}, DB: ${DB_STATUS})"
             exit 1
           fi
